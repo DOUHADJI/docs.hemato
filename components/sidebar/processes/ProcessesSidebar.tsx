@@ -2,17 +2,18 @@ import { BiMenu, BiMenuAltLeft } from 'react-icons/bi'
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs'
 import { ImCross } from 'react-icons/im'
 import { FunctionComponent, useEffect, useState } from 'react'
-import MobileSideBar from './mobileSidebar'
-import DesktopSideBar from './desktopSidebar'
-import { fetchAllProcesses } from '../api'
+import MobileSideBar from '../mobileSidebar'
+import DesktopSideBar from '../desktopSidebar'
+import { fetchAllStories } from '../../api'
+import MyDropdown from '../dropdown'
 
-const SideBar: FunctionComponent = () => {
+const ProcessesSideBar: FunctionComponent = () => {
   const [preAnalyticLinks, setPreAnalyticLinks] = useState([])
   const [analyticLinks, setAnalyticLinks] = useState([])
   const [postAnalyticLinks, setPostAnalyticLinks] = useState([])
 
   const getLinks = async () => {
-    const data = await fetchAllProcesses()
+    const data = await fetchAllStories()
     const links = data.stories.map((process) => ({
       title: process.name,
       href: '/' + process.full_slug,
@@ -53,15 +54,19 @@ const SideBar: FunctionComponent = () => {
 
   return (
     <div>
-      <DesktopSideBar
-        preAnalyticLinks={preAnalyticLinks}
-        analyticLinks={analyticLinks}
-        postAnalyticLinks={postAnalyticLinks}
-      />
-      <MobileSideBar preAnalyticLinks={preAnalyticLinks}    analyticLinks={analyticLinks}
-        postAnalyticLinks={postAnalyticLinks} />
+      <DesktopSideBar>
+        <MyDropdown id='preAnalyticProcesses' title='procédures pré-analytiques' links={preAnalyticLinks} />
+        <MyDropdown id='analyticProcesses' title='procédures analytiques' links={analyticLinks} />
+        <MyDropdown id='postAnalyticProcesses' title='procédures post-analytiques' links={postAnalyticLinks} />
+      </DesktopSideBar>
+
+      <MobileSideBar >
+        <MyDropdown id='MobpreAnalyticProcesses' title='procédures pré-analytiques' links={preAnalyticLinks} />
+        <MyDropdown id='MobanalyticProcesses' title='procédures analytiques' links={analyticLinks} />
+        <MyDropdown id='MobpostAnalyticProcesses' title='procédures post-analytiques' links={postAnalyticLinks} />
+      </MobileSideBar>
     </div>
   )
 }
 
-export default SideBar
+export default ProcessesSideBar

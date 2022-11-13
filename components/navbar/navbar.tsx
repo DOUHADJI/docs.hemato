@@ -5,12 +5,12 @@ import NavLink from './navLinkCpn'
 import ThemeSwitcher from './themeSwitcher'
 import { AiOutlineSearch } from 'react-icons/ai'
 import SearchModal from '../search/searchModal'
-import { fetchAllProcesses } from '../api'
+import { fetchAllStories } from '../api'
 
 const NavbarCpn: FunctionComponent = () => {
   const [open, setOpen] = useState(false)
 
-  console.log(fetchAllProcesses())
+  console.log(fetchAllStories())
 
   const links = [
     {
@@ -20,7 +20,7 @@ const NavbarCpn: FunctionComponent = () => {
 
     {
       title: 'Cours',
-      href: '/courses',
+      href: '/courses/prologue',
     },
 
     {

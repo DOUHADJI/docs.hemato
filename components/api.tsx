@@ -11,7 +11,7 @@ export const axiosInstance = () => {
   })
 }
 
-export const fetchAllProcesses = async () => {
+export const fetchAllStories = async () => {
   try {
     const { data } = await axiosInstance().get('/')
     return data
@@ -21,9 +21,18 @@ export const fetchAllProcesses = async () => {
 }
 
 export const fetchOneProcess = async (slug) => {
-  let find = false
+ 
   try {
     const { data } = await axiosInstance().get('/processes/' + slug)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const fetchOneCourse = async (slug) => {
+  try {
+    const { data } = await axiosInstance().get('/courses/' + slug)
     return data
   } catch (error) {
     console.log(error)

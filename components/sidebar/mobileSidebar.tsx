@@ -1,9 +1,9 @@
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs'
-import { FunctionComponent } from 'react'
+import { FunctionComponent , ReactNode} from 'react'
 import SideBarLinkCpn from './sidebarLink'
 import MyDropdown from './dropdown'
 
-const MobileSideBar: FunctionComponent<{preAnalyticLinks, analyticLinks, postAnalyticLinks}> = ({preAnalyticLinks, analyticLinks, postAnalyticLinks}) => {
+const MobileSideBar: FunctionComponent<{children : ReactNode }> = ({children}) => {
 
   function openSidebar() {
     document.querySelector('.sidebar').classList.toggle('hidden')
@@ -29,9 +29,7 @@ const MobileSideBar: FunctionComponent<{preAnalyticLinks, analyticLinks, postAna
         </span>
 
         <div className=' grid gap-12 mt-[100px]'>
-        <MyDropdown id='preAnalyticProcesses' title='procédures pré-analytiques' links={preAnalyticLinks} />
-        <MyDropdown id='analyticProcesses' title='procédures analytiques' links={analyticLinks} />
-        <MyDropdown id='postAnalyticProcesses' title='procédures post-analytiques' links={postAnalyticLinks} />
+            {children}
         </div>
       </div>
     </div>

@@ -1,14 +1,13 @@
 import LayoutCpn from '../../../components/layouts/layout'
 import { FunctionComponent } from 'react'
 import ProcessCpn from '../../../components/process/process'
-import { fetchAllProcesses, fetchOneProcess } from '../../../components/api'
-import SideBarCpn from '../../../components/sidebar/desktopSidebar'
-import AnotherSide from '../../../components/sidebar/sidebar'
+import ProcessesSideBar from '../../../components/sidebar/processes/ProcessesSidebar'
+import { fetchAllStories, fetchOneProcess } from '../../../components/api'
 
 const Process: FunctionComponent<{ story }> = ({ story }) => {
-  console.log(story.full_slug)
+  
   return (
-    <LayoutCpn navigation={<AnotherSide />}>
+    <LayoutCpn navigation={<ProcessesSideBar />}>
       <ProcessCpn story={story} />
     </LayoutCpn>
   )
@@ -21,7 +20,6 @@ export async function getStaticProps({ params }) {
 
   const slug = step + '/' + process
 
-  console.log('params', params)
 
   const data = await fetchOneProcess(slug)
 
@@ -34,7 +32,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = await fetchAllProcesses()
+  const data = await fetchAllStories()
   const slugs = data.stories.map((process) => '/' + process.full_slug)
 
   console.log(slugs)
