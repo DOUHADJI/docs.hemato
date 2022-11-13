@@ -5,7 +5,6 @@ import ProcessesSideBar from '../../../components/sidebar/processes/ProcessesSid
 import { fetchAllStories, fetchOneProcess } from '../../../components/api'
 
 const Process: FunctionComponent<{ story }> = ({ story }) => {
-  
   return (
     <LayoutCpn navigation={<ProcessesSideBar />}>
       <ProcessCpn story={story} />
@@ -19,7 +18,6 @@ export async function getStaticProps({ params }) {
   const { step, process } = params
 
   const slug = step + '/' + process
-
 
   const data = await fetchOneProcess(slug)
 

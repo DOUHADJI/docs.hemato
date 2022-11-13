@@ -8,7 +8,6 @@ import { fetchAllStories } from '../../api'
 import MyDropdown from '../dropdown'
 
 const CoursesSideBar: FunctionComponent = () => {
-
   const [coursesFirstThematic, setCoursesFirstThematic] = useState([])
   const [coursesSecondThematic, setCoursesSecondThematic] = useState([])
 
@@ -23,7 +22,9 @@ const CoursesSideBar: FunctionComponent = () => {
     getCoursesSecondThematic(links)
   }
 
-  const getCoursesFirstThematic = (links: { title: string; href: string }[]) => {
+  const getCoursesFirstThematic = (
+    links: { title: string; href: string }[],
+  ) => {
     const res = links.filter((item) =>
       item?.href.match('/courses/les-parasites-du-sang/*'),
     )
@@ -31,15 +32,15 @@ const CoursesSideBar: FunctionComponent = () => {
     setCoursesFirstThematic(res)
   }
 
-  const getCoursesSecondThematic = (links: { title: string; href: string }[]) => {
+  const getCoursesSecondThematic = (
+    links: { title: string; href: string }[],
+  ) => {
     const res = links.filter((item) =>
       item?.href.match('/courses/les-hemopathies-myeloides/*'),
     )
 
     setCoursesSecondThematic(res)
   }
-
- 
 
   useEffect(() => {
     getLinks()
@@ -48,13 +49,29 @@ const CoursesSideBar: FunctionComponent = () => {
   return (
     <div>
       <DesktopSideBar>
-        <MyDropdown id='parasitesDuSang' title='Les parasites du sang' links={coursesFirstThematic} />
-        <MyDropdown id='hemopathiesMyeloides' title='Les hémopathies myéloïdes' links={coursesSecondThematic} />
+        <MyDropdown
+          id="parasitesDuSang"
+          title="Les parasites du sang"
+          links={coursesFirstThematic}
+        />
+        <MyDropdown
+          id="hemopathiesMyeloides"
+          title="Les hémopathies myéloïdes"
+          links={coursesSecondThematic}
+        />
       </DesktopSideBar>
 
-      <MobileSideBar >
-        <MyDropdown id='MobParasitesDuSang' title='Les parasites du sang' links={coursesFirstThematic} />
-        <MyDropdown id='MobHemopathiesMyeloides' title='Les hémopathies myéloïdes' links={coursesSecondThematic} />   
+      <MobileSideBar>
+        <MyDropdown
+          id="MobParasitesDuSang"
+          title="Les parasites du sang"
+          links={coursesFirstThematic}
+        />
+        <MyDropdown
+          id="MobHemopathiesMyeloides"
+          title="Les hémopathies myéloïdes"
+          links={coursesSecondThematic}
+        />
       </MobileSideBar>
     </div>
   )

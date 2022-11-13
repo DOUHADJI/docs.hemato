@@ -1,15 +1,15 @@
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs'
-import { FunctionComponent , ReactNode} from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import SideBarLinkCpn from './sidebarLink'
 import MyDropdown from './dropdown'
 
-const MobileSideBar: FunctionComponent<{children : ReactNode }> = ({children}) => {
-
+const MobileSideBar: FunctionComponent<{ children: ReactNode }> = ({
+  children,
+}) => {
   function openSidebar() {
     document.querySelector('.sidebar').classList.toggle('hidden')
     document.querySelector('.hiddeButton').classList.toggle('hidden')
   }
-
 
   return (
     <div className="bg-transparent mt-12 md:hidden">
@@ -28,9 +28,7 @@ const MobileSideBar: FunctionComponent<{children : ReactNode }> = ({children}) =
           <BsBoxArrowLeft className=" px-2 bg-gray-900/25 rounded-md  text-[3rem]" />
         </span>
 
-        <div className=' grid gap-12 mt-[100px]'>
-            {children}
-        </div>
+        <div className=" grid gap-12 mt-[100px]">{children}</div>
       </div>
     </div>
   )

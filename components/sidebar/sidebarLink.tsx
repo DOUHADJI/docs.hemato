@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { FunctionComponent } from 'react'
 import { BsArrowRightShort } from 'react-icons/bs'
 
-
 const SideBarLinkCpn: FunctionComponent<{ title: string; href: string }> = ({
   title,
   href,

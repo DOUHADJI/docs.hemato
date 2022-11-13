@@ -4,7 +4,6 @@ import ProcessCpn from '../../../../components/process/process'
 import CoursesSideBar from '../../../../components/sidebar/courses/coursesSidebar'
 import { fetchAllStories, fetchOneCourse } from '../../../../components/api'
 
-
 const Course: FunctionComponent<{ story }> = ({ story }) => {
   console.log(story.full_slug)
   return (

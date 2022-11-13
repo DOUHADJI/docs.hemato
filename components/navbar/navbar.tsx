@@ -10,7 +10,6 @@ import { fetchAllStories } from '../api'
 const NavbarCpn: FunctionComponent = () => {
   const [open, setOpen] = useState(false)
 
-
   const links = [
     {
       title: 'Procédures',

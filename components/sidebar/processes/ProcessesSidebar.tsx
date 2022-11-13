@@ -55,15 +55,39 @@ const ProcessesSideBar: FunctionComponent = () => {
   return (
     <div>
       <DesktopSideBar>
-        <MyDropdown id='preAnalyticProcesses' title='procédures pré-analytiques' links={preAnalyticLinks} />
-        <MyDropdown id='analyticProcesses' title='procédures analytiques' links={analyticLinks} />
-        <MyDropdown id='postAnalyticProcesses' title='procédures post-analytiques' links={postAnalyticLinks} />
+        <MyDropdown
+          id="preAnalyticProcesses"
+          title="procédures pré-analytiques"
+          links={preAnalyticLinks}
+        />
+        <MyDropdown
+          id="analyticProcesses"
+          title="procédures analytiques"
+          links={analyticLinks}
+        />
+        <MyDropdown
+          id="postAnalyticProcesses"
+          title="procédures post-analytiques"
+          links={postAnalyticLinks}
+        />
       </DesktopSideBar>
 
-      <MobileSideBar >
-        <MyDropdown id='MobpreAnalyticProcesses' title='procédures pré-analytiques' links={preAnalyticLinks} />
-        <MyDropdown id='MobanalyticProcesses' title='procédures analytiques' links={analyticLinks} />
-        <MyDropdown id='MobpostAnalyticProcesses' title='procédures post-analytiques' links={postAnalyticLinks} />
+      <MobileSideBar>
+        <MyDropdown
+          id="MobpreAnalyticProcesses"
+          title="procédures pré-analytiques"
+          links={preAnalyticLinks}
+        />
+        <MyDropdown
+          id="MobanalyticProcesses"
+          title="procédures analytiques"
+          links={analyticLinks}
+        />
+        <MyDropdown
+          id="MobpostAnalyticProcesses"
+          title="procédures post-analytiques"
+          links={postAnalyticLinks}
+        />
       </MobileSideBar>
     </div>
   )
