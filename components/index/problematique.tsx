@@ -6,12 +6,17 @@ import { appTitle, AppTitleCpn } from '../const'
 
 const Problematique: FunctionComponent = () => {
   return (
-    <div className='relative'>
-        <div className=' grid gap-12 absolute right-0 z-10 opacity-25 border-transparent  '>
-        <Image height={320} width={450} src='/images/technicien.jpg' alt='White blood cell img'  className='rounded-tl-[20px] myWbcImg'/>
-        <Image height={120} width={330} src='/images/wbc.webp' alt='White blood cell img'  className='myWbcImg'/>
-        </div>
-      <section className=''>
+    <div className="relative">
+      <div className=" grid gap-12 absolute right-0 z-10 opacity-25 border-transparent  ">
+        <Image
+          height={320}
+          width={450}
+          src="/images/technicien.jpg"
+          alt="White blood cell img"
+          className="rounded-tl-[20px] myWbcImg"
+        />
+      </div>
+      <section className="relative">
         <div>
           <p className="text-[2rem] uppercase font-bold">
             <span className="text-blue-400 mr-2 text-[2.5rem]">#</span>
@@ -34,7 +39,7 @@ const Problematique: FunctionComponent = () => {
             processus, effectués au sein des laboratoires d&apos;analyses en
             hématologie, selon les exigences de la norme{' '}
             <a
-              className="underline text-bold text-blue-300"
+              className="underline text-bold text-blue-300 z-20"
               target={'_blank'}
               rel="noreferrer"
               href="https://www.iso.org/fr/standard/56115.html#:~:text=L%27ISO%2015189%3A2012%20sp%C3%A9cifie,et%20%C3%A9valuent%20leur%20propre%20comp%C3%A9tence."
@@ -51,12 +56,12 @@ const Problematique: FunctionComponent = () => {
             est animé par les médecins et biologistes du laboratoire
             d&apos;hématologie du{' '}
             <a
-              className="underline text-bold text-blue-300"
+              className="underline text-bold text-blue-300 z-20"
               target={'_blank'}
               href="https://telemedchucampus.tg/"
               rel="noreferrer"
             >
-              CHU Campus/Lomé-Togo
+              CHU Campus
             </a>
             . Il est destiné à toute personne intéressée et en particulier aux
             étudiants en médecine, pharmacie ou biologie, aux internes en
