@@ -21,6 +21,7 @@ export const fetchAllProcesses = async () => {
 }
 
 export const fetchOneProcess = async (slug) => {
+  let find = false
   try {
     const { data } = await axiosInstance().get('/processes/' + slug)
     return data

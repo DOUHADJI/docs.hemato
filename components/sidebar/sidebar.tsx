@@ -1,22 +1,15 @@
-import { Collapse, Text } from '@nextui-org/react'
-import {
-  FunctionComponent,
-  useState,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-} from 'react'
-import { BiHide } from 'react-icons/bi'
+import { BiMenu, BiMenuAltLeft } from 'react-icons/bi'
+import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs'
+import { ImCross } from 'react-icons/im'
+import { FunctionComponent, useEffect, useState } from 'react'
+import MobileSideBar from './mobileSidebar'
+import DesktopSideBar from './desktopSidebar'
 import { fetchAllProcesses } from '../api'
-import SideBarLinkCpn from './sidebarLink'
 
-const SideBarCpn: FunctionComponent<{
-  hidden: boolean
-  setHidden: Dispatch<SetStateAction<boolean>>
-}> = ({ hidden, setHidden }) => {
-  const [links, setLinks] = useState([])
-
-  console.log(links)
+const SideBar: FunctionComponent = () => {
+  const [preAnalyticLinks, setPreAnalyticLinks] = useState([])
+  const [analyticLinks, setAnalyticLinks] = useState([])
+  const [postAnalyticLinks, setPostAnalyticLinks] = useState([])
 
   const getLinks = async () => {
     const data = await fetchAllProcesses()
@@ -25,65 +18,50 @@ const SideBarCpn: FunctionComponent<{
       href: '/' + process.full_slug,
     }))
 
-    setLinks(links)
+    getPreAnalyticLinks(links)
+    getAnalyticLinks(links)
+    getPostAnalyticLinks(links)
+  }
+
+  const getPreAnalyticLinks = (links: { title: string; href: string }[]) => {
+    const res = links.filter((item) =>
+      item?.href.match('/processes/procedures-pre-analytiques/*'),
+    )
+
+    setPreAnalyticLinks(res)
+  }
+
+  const getAnalyticLinks = (links: { title: string; href: string }[]) => {
+    const res = links.filter((item) =>
+      item?.href.match('/processes/procedures-analytiques/*'),
+    )
+
+    setAnalyticLinks(res)
+  }
+
+  const getPostAnalyticLinks = (links: { title: string; href: string }[]) => {
+    const res = links.filter((item) =>
+      item?.href.match('/processes/procedures-post-analytiques/*'),
+    )
+
+    setPostAnalyticLinks(res)
   }
 
   useEffect(() => {
     getLinks()
   }, [])
 
-  const handleSidebarVisibility = () => {
-    hidden == false ? setHidden(true) : setHidden(false)
-  }
-
   return (
-    <div className="min-h-screen w-5/12  p-6" hidden={hidden}>
-      <div className="flex  items-center justify-end gap-3 w-full md:hidden">
-        <button
-          onClick={handleSidebarVisibility}
-          className="rounded bg-gray-300 p-2"
-        >
-          <span className="flex items-center justify-around font-bold gap-3 pl-3">
-            <span>Masquer le menu </span>
-            <BiHide className="text-xl" />
-          </span>
-        </button>
-      </div>
-      <div className="grid gap-3 p-4 pt-12">
-        <Collapse.Group bordered>
-          <Collapse
-            title={
-              <Text b className="text-white/50 uppercase text-[1.5rem]">
-                Procédures pré-analytiques
-              </Text>
-            }
-            color="success"
-          >
-            {links.map((item) => (
-              <SideBarLinkCpn
-                key={item.title}
-                title={item.title}
-                href={item.href}
-              />
-            ))}
-          </Collapse>
-          <Collapse
-            title={
-              <Text b className="text-white/50 uppercase text-[1.5rem]">
-                Procédures analytiques
-              </Text>
-            }
-          ></Collapse>
-          <Collapse
-            title={
-              <Text b className="text-white/50 uppercase text-[1.5rem]">
-                Procédures post-analytiques
-              </Text>
-            }
-          ></Collapse>
-        </Collapse.Group>
-      </div>
+    <div>
+      <DesktopSideBar
+        preAnalyticLinks={preAnalyticLinks}
+        analyticLinks={analyticLinks}
+        postAnalyticLinks={postAnalyticLinks}
+      />
+      <MobileSideBar preAnalyticLinks={preAnalyticLinks}    analyticLinks={analyticLinks}
+        postAnalyticLinks={postAnalyticLinks} />
     </div>
   )
 }
-export default SideBarCpn
+
+export default SideBar

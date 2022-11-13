@@ -5,9 +5,12 @@ import NavLink from './navLinkCpn'
 import ThemeSwitcher from './themeSwitcher'
 import { AiOutlineSearch } from 'react-icons/ai'
 import SearchModal from '../search/searchModal'
+import { fetchAllProcesses } from '../api'
 
 const NavbarCpn: FunctionComponent = () => {
   const [open, setOpen] = useState(false)
+
+  console.log(fetchAllProcesses())
 
   const links = [
     {
