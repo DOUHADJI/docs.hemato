@@ -10,7 +10,7 @@ import SideBarCpn from '../sidebar/desktopSidebar'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 const LayoutCpn: FunctionComponent<{
-  navigation: ReactNode
+  navigation?: ReactNode
   children: ReactNode
 }> = ({ children, navigation }) => {
   const [hidden, setHidden] = useState(false)
