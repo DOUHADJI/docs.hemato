@@ -1,12 +1,17 @@
 import { Link } from '@nextui-org/react'
 import App from 'next/app'
+import Image from 'next/image'
 import { FunctionComponent } from 'react'
 import { appTitle, AppTitleCpn } from '../const'
 
 const Problematique: FunctionComponent = () => {
   return (
-    <div>
-      <section>
+    <div className='relative'>
+        <div className=' grid gap-12 absolute right-0 z-10 opacity-25 border-transparent  '>
+        <Image height={320} width={450} src='/images/technicien.jpg' alt='White blood cell img'  className='rounded-tl-[20px] myWbcImg'/>
+        <Image height={120} width={330} src='/images/wbc.webp' alt='White blood cell img'  className='myWbcImg'/>
+        </div>
+      <section className=''>
         <div>
           <p className="text-[2rem] uppercase font-bold">
             <span className="text-blue-400 mr-2 text-[2.5rem]">#</span>
