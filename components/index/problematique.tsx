@@ -44,9 +44,10 @@ const Problematique: FunctionComponent = () => {
             laboratoires d&apos;analyses, pour servir de référence au personnel
             médical, mais également aux étudiants en formation, en apportant des
             informations claires, précises et fiables pour quiconque serait en
-            doute dans la réalisation d&apos;un processus, en même qu&apos;en étant une
-            référence pour les structures de santé dans la mise en place de leur
-            manuel qualité conformément aux recommandations de la norme{' '}
+            doute dans la réalisation d&apos;un processus, en même qu&apos;en
+            étant une référence pour les structures de santé dans la mise en
+            place de leur manuel qualité conformément aux recommandations de la
+            norme{' '}
             <a
               className="underline text-bold text-blue-300 z-20"
               target={'_blank'}
