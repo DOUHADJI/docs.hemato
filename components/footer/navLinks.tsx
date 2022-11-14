@@ -10,7 +10,7 @@ const NavLinksCpn = () => {
       {NavLinks.map((link) => (
         <Link
           key={link.title}
-          className="text-gray-700 font-[550]  dark:text-white"
+          className="text-gray-700 underline font-[550]  dark:text-white"
           href={link.href}
         >
           {link.title}

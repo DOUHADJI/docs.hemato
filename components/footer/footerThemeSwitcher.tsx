@@ -11,6 +11,7 @@ const FooterThemeSwitcher = () => {
     <div className="grid justify-center gap-4">
       <select
         onChange={(e) => setTheme(e.target.value)}
+        defaultValue={theme}
         className="px-3 py-1 bg-gray-100 text-gray-600 font-bold border-2 border-gray-300 rounded dark:border-white/75 dark:text-white/75 dark:bg-slate-900"
       >
         <option value={'light'}>Light</option>

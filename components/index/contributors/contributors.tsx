@@ -1,5 +1,5 @@
 import React from 'react'
-import { appTitle } from '../../const'
+import { amevi, appTitle, michel } from '../../const'
 import Contributor from './contributor'
 
 export default function Contributors() {
@@ -11,23 +11,22 @@ export default function Contributors() {
             Ils contribuent à {appTitle} ...
           </h1>
           <p className="text-base leading-6 mt-4 text-center text-gray-600 2xl:w-2/5 dark:text-gray-300 ">
-            Grâce à eux ce projet a pu voir le jour et est un success...
+            Grâce à eux ce projet a pu voir le jour...
           </p>
         </div>
         <div className="w-full lg:flex items-center gap-6 mt-10">
           <Contributor
-            profileImage="/images/contributors/Michel.jpg"
-            name="Michel Kossi AKPABLA"
-            grade="Développeur web"
-            assertion=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam minus recusandae sapiente error neque laboriosam aliquam enim, soluta praesentium vitae quibusdam reiciendis id ab itaque commodi explicabo nisi. A, sed.
-            assertion"
+            profileImage={amevi.profil}
+            name={amevi.name}
+            grade={amevi.grade}
+            assertion={amevi.assertion}
           />
+
           <Contributor
-            profileImage="/images/contributors/Amevi.jpg"
-            name="Amevi Gregoire DOUHADJI"
-            grade="Développeur web"
-            assertion=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam minus recusandae sapiente error neque laboriosam aliquam enim, soluta praesentium vitae quibusdam reiciendis id ab itaque commodi explicabo nisi. A, sed.
-            assertion"
+            profileImage={michel.profil}
+            name={michel.name}
+            grade={michel.grade}
+            assertion={michel.assertion}
           />
         </div>
       </div>
