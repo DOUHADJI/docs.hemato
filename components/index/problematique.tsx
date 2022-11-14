@@ -18,21 +18,27 @@ const Problematique: FunctionComponent = () => {
       </div>
       <section className="relative">
         <div>
-          <p className="text-[2rem] uppercase font-bold">
-            <span className="text-blue-400 mr-2 text-[2.5rem]">#</span>
+          <p className="text-xl uppercase font-bold text-xl sm:text-2xl md:text-[2rem]">
+            <span className="text-blue-400 mr-2 text-[2rem] md:text-[2.5rem]">#</span>
             {appTitle} : qu&apos;est ce que s&apos;est ?
           </p>
         </div>
-        <div className="pl-12">
-          <p className="text-[1.2rem] text-justify">
-            <p className="text-[1.4rem]  font-bold">
-              <span className="text-blue-300  mr-2 text-[1.5rem]">#</span>
+
+        <div className="pl-12 mt-6">
+            <p className=" font-bold text-xl md:text-[1.4rem] ">
+              <span className="text-blue-300 mr-2 text-sm md:text-[1.3rem]">#</span>
               D&apos;abord la problématique
             </p>
-            Partant du constat que le
+
+            <p className="text- text-lg text-justify mt-2  md:text-[1.2rem] ">
+                <span>
+                Partant du constat que le
+                </span>
+
             <span>
               <a className=" font-bold"> Togo </a>
             </span>
+           
             n&apos;a pas un site officiel de documentation sur les processus au
             sein des sutructures de santé, <AppTitleCpn />
             est dédié à fournir un répertoire de méthodologies des différents

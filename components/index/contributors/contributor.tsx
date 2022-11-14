@@ -9,7 +9,7 @@ const Contributor: FunctionComponent<{
   assertion: string
 }> = ({ profileImage, name, grade, assertion }) => {
   return (
-    <div className="lg:w-1/2">
+    <div className="my-4 lg:w-1/2">
       <div className="bg-white border-2 rounded-md border-gray-200 relative sm:p-10 p-6 dark:bg-slate-900 dark:border-slate-800">
         <div>
           <Image

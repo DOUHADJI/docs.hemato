@@ -1,15 +1,19 @@
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode, useEffect } from 'react'
 import SideBarLinkCpn from './sidebarLink'
 import MyDropdown from './dropdown'
+import { useRouter } from 'next/router'
+import { openSidebar } from '../const'
 
 const MobileSideBar: FunctionComponent<{ children: ReactNode }> = ({
   children,
 }) => {
-  function openSidebar() {
-    document.querySelector('.sidebar').classList.toggle('hidden')
-    document.querySelector('.hiddeButton').classList.toggle('hidden')
-  }
+
+    const router = useRouter()
+
+  useEffect(() => {
+    openSidebar
+  }, [])
 
   return (
     <div className="bg-transparent mt-12 md:hidden">

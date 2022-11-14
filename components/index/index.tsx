@@ -39,7 +39,9 @@ const IndexCpn: FunctionComponent<{}> = ({}) => {
       <div className="bg-gray-100">
         <Partners />
       </div>
-      <div className="bg-white">{/* <Footer /> */}</div>
+      <div className="bg-white">
+        <Footer />
+      </div>
     </div>
   )
 }

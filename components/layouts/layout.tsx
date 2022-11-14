@@ -25,7 +25,7 @@ const LayoutCpn: FunctionComponent<{
       </div>
       <div className="">
         <div className="relative flex">
-          <div className="w-[550px]">{navigation}</div>
+          <div className="">{navigation}</div>
           <div className=" w-full p-12"> {children} </div>
         </div>
       </div>

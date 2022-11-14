@@ -8,7 +8,7 @@ export default function Contributors() {
       <div className="lg:px-20 md:px-6 px-4 py-12">
         <div className="flex flex-col items-center justify-center">
           <h1 className="lg:text-4xl text-3xl font-bold text-center text-gray-800 dark:text-gray-100">
-            Ils contribuent à {appTitle}
+            Ils contribuent à {appTitle} ...
           </h1>
           <p className="text-base leading-6 mt-4 text-center text-gray-600 2xl:w-2/5 dark:text-gray-300 ">
             Grâce à eux ce projet a pu voir le jour et est un success...
