@@ -19,7 +19,7 @@ const Footer = () => {
             politique de confidentialité
           </Link>
           <Link className="text-gray-700 dark:text-white" href={'#'}>
-            condition d'utilisation
+            condition d&apos;utilisation
           </Link>
         </div>
 

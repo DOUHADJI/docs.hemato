@@ -9,6 +9,7 @@ const NavLinksCpn = () => {
     <div className="grid justify-center gap-4">
       {NavLinks.map((link) => (
         <Link
+          key={link.title}
           className="text-gray-700 font-[550]  dark:text-white"
           href={link.href}
         >

@@ -13,7 +13,7 @@ const NavbarCpn: FunctionComponent = () => {
   const router = useRouter()
 
   const goHome = () => {
-    router.push('/') 
+    router.push('/')
   }
   const openModal = () => {
     setOpen(true)
@@ -23,7 +23,9 @@ const NavbarCpn: FunctionComponent = () => {
     <div>
       <nav className="flex h-[60px] w-full">
         <div className=" grid justify-center items-center w-3/5">
-          <span className="text-xl font-extrabold" onClick={goHome} >{appTitle}</span>
+          <span className="text-xl font-extrabold" onClick={goHome}>
+            {appTitle}
+          </span>
         </div>
         <div className="flex justify-center items-center gap-6 w-full">
           <ThemeSwitcher />

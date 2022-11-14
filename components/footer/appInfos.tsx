@@ -4,7 +4,7 @@ import { appTitle } from '../const'
 const AppInfos = () => {
   return (
     <div className="py-12 dark:bg-gray-800">
-      <Image src="/logo.png" width={120} height={80} />
+      <Image src="/logo.png" width={120} height={80} alt="logo" />
       <p className="text-black text-center underline font-bold text-[1.2rem] -mt-2 dark:text-gray-200">
         {appTitle}
       </p>

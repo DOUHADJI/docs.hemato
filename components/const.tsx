@@ -18,9 +18,9 @@ export const NavLinks = [
 ]
 
 export function openSidebar() {
-    document.querySelector('.sidebar').classList.toggle('hidden')
-    document.querySelector('.hiddeButton').classList.toggle('hidden')
-  }
+  document.querySelector('.sidebar').classList.toggle('hidden')
+  document.querySelector('.hiddeButton').classList.toggle('hidden')
+}
 
 export function AppTitleCpn() {
   return (

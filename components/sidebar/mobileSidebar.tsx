@@ -8,8 +8,7 @@ import { openSidebar } from '../const'
 const MobileSideBar: FunctionComponent<{ children: ReactNode }> = ({
   children,
 }) => {
-
-    const router = useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     openSidebar
