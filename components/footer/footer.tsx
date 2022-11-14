@@ -11,7 +11,7 @@ import SocialLinks from './socialLinks'
 const Footer = () => {
   return (
     <div className="pt-12 dark:bg-gray-800">
-      <div className="flex flex-wrap gap-12  px-6 border-t border-b  py-12">
+      <div className="flex justify-around gap-12  px-6 border-t border-b  py-12 sm:flex flex-wrap">
         <NavLinksCpn />
 
         <div className="grid justify-center gap-4">
@@ -23,7 +23,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="grid w-full justify-center  items-around gap-12">
+        <div className="grid  justify-center  items-around gap-12">
           <SocialLinks />
           <FooterThemeSwitcher />
         </div>
