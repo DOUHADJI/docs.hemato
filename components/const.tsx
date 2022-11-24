@@ -22,7 +22,7 @@ export const NavLinks = [
 
   {
     title: 'Cas de la semaine',
-    href: '/#',
+    href: '/cas_de_la_semaine',
   },
 ]
 
