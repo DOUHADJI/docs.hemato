@@ -42,7 +42,8 @@ const ProcessPrologue: FunctionComponent = () => {
         <section>
           <p className="text-[1rem] uppercase font-bold tracking-wide">
             <span className="text-blue-300  mr-2 text-[1.5rem]">#</span>
-            Qu&apos;est ce qu&apos;une procédure en laboratoire d&apos;analyses ?
+            Qu&apos;est ce qu&apos;une procédure en laboratoire d&apos;analyses
+            ?
           </p>
           <p className="text-justify  text-white/75 text-lg font-light ">
             D&apos;appelation technique
@@ -52,8 +53,8 @@ const ProcessPrologue: FunctionComponent = () => {
             </span>
             , les POS (procédures) sont des documents qui contiennent des
             instructions écrites, étape par étape, que le personnel du
-            laboratoire devrait suivre méticuleusement lorsqu&apos;il réalise une
-            analyse, dont l&apos;ensemble constitue le "manuel qualité" du
+            laboratoire devrait suivre méticuleusement lorsqu&apos;il réalise
+            une analyse, dont l&apos;ensemble constitue le "manuel qualité" du
             Laboratoire. Ce manuel contient donc une POS pour chaque analyses ou
             processus réalisés au sein du laboratoire.
           </p>
@@ -71,8 +72,8 @@ const ProcessPrologue: FunctionComponent = () => {
             <span className="font-medium pl-6">
               <span># La cohérence {':'} </span> Chaque membre du personnel
               devra suivre exactement les étapes décritent dans les POS afin
-              d&apos;assurer une uniformité des résultats obtenus par le reste du
-              personnel pour la même analyse.
+              d&apos;assurer une uniformité des résultats obtenus par le reste
+              du personnel pour la même analyse.
             </span>
             <br /> <br />
             <span className="font-medium pl-6">
