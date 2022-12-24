@@ -1,10 +1,16 @@
 import { Image, Modal } from '@nextui-org/react'
+import { useRouter } from 'next/router'
 
 import { FC, useState } from 'react'
+import { BsShare } from 'react-icons/bs'
 import RichtextRenderer from '../richTextRenderer'
+import SocialShareCpn from '../social_share/socialShare'
 import VideoPlayer from '../videoPlayer'
 
 const ProcessCpn: FC<{ story }> = ({ story }) => {
+  const router = useRouter()
+  const link = process.env.NEXT_PUBLIC_APP_BASE_PATH + router.asPath
+
   const {
     content: { title, description, content, image, video },
   } = story
@@ -16,6 +22,7 @@ const ProcessCpn: FC<{ story }> = ({ story }) => {
   }
   return (
     <div className="pt-6">
+      <SocialShareCpn link={link} />
       <div>
         <p className="text-[2rem] uppercase font-bold">
           <span className="text-blue-400 mr-2 text-[2.5rem]">#</span>

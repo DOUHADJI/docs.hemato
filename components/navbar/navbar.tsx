@@ -23,9 +23,11 @@ const NavbarCpn: FunctionComponent = () => {
     <div>
       <nav className="flex h-[60px] w-full">
         <div className=" grid justify-center items-center w-3/5">
-          <span className="text-xl font-extrabold" onClick={goHome}>
-            {appTitle}
-          </span>
+          <Link className="text-white">
+            <span className="text-xl font-extrabold" onClick={goHome}>
+              {appTitle}
+            </span>
+          </Link>
         </div>
         <div className="flex justify-center items-center gap-6 w-full">
           <ThemeSwitcher />
