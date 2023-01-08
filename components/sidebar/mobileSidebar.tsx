@@ -23,7 +23,7 @@ const MobileSideBar: FunctionComponent<{ children: ReactNode }> = ({
         <BsBoxArrowRight className="px-2 bg-gray-900/25 rounded-md mt-5 text-[3rem]" />
       </span>
 
-      <div className="sidebar z-10 absolute  top-0 bottom-0 lg:left-0 p-2 w-[350px] overflow-y-auto text-center bg-gradient-to-b from-zinc-600 to-zinc-500/75 dark:from-slate-800 dark:bg-slate-800/75">
+      <div className="sidebar z-40 absolute  top-0 bottom-0 lg:left-0 p-2 w-[350px] overflow-y-auto text-center bg-gradient-to-b from-zinc-900 to-zinc-500/75 dark:from-slate-800 dark:to-slate-800/75">
         <span
           className="absolute text-white text-2xl top-5 right-5"
           onClick={openSidebar}

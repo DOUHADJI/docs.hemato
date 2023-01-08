@@ -21,7 +21,7 @@ const NavbarCpn: FunctionComponent = () => {
 
   return (
     <div>
-      <nav className="flex h-[60px] w-full">
+      <div className="flex h-[60px] w-full">
         <div className=" grid justify-center items-center w-3/5">
           <Link className="text-white">
             <span className="text-xl font-extrabold" onClick={goHome}>
@@ -32,7 +32,7 @@ const NavbarCpn: FunctionComponent = () => {
         <div className="flex justify-center items-center gap-6 w-full">
           <ThemeSwitcher />
         </div>
-      </nav>
+      </div>
 
       <Navbar isBordered>
         <Navbar.Brand>

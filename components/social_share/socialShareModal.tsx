@@ -1,6 +1,12 @@
 import { Avatar, Button, Modal, StyledPopoverContent } from '@nextui-org/react'
 import { FunctionComponent } from 'react'
-import { BsFacebook, BsLinkedin, BsShare, BsTwitter, BsWhatsapp } from 'react-icons/bs'
+import {
+  BsFacebook,
+  BsLinkedin,
+  BsShare,
+  BsTwitter,
+  BsWhatsapp,
+} from 'react-icons/bs'
 import { WhatsappShareButton } from 'react-share'
 import FacebookShareButton from 'react-share/lib/FacebookShareButton'
 import LinkedinShareButton from 'react-share/lib/LinkedinShareButton'
@@ -12,15 +18,9 @@ const SocialShareModalCpn: FunctionComponent<{
   setOpen
 }> = ({ link, open, setOpen }) => {
   return (
-    <Modal
-      open={open}
-      onClose={() => setOpen(false)}
-      className="bg-transparent   p-3"
-    >
+    <Modal open={open} onClose={() => setOpen(false)} className="bg-white pb-2">
       <Modal.Header>
-        <p className="text-white font-light text-xl">
-          Partager via...
-        </p>
+        <p className="text-black font-light text-xl">Partager</p>
       </Modal.Header>
       <Modal.Body>
         <div className="flex flex-wrap gap-6">
