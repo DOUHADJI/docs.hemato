@@ -16,11 +16,16 @@ const SocialShareCpn: FunctionComponent<{ link: string }> = ({ link }) => {
     e.preventDefault()
     navigator.clipboard.writeText(link)
     setCopy(true)
+    resetCopy()
   }
+
+  const resetCopy = () =>
+    setTimeout(() => {
+      setCopy(false)
+    }, 2000)
 
   return (
     <div className="flex justify-start gap-4 mt-6">
-      <input id="linkInput" type="text" value={link} hidden />
       <a
         className="border-2 rounded-full"
         onClick={handleClipboardCopy}
@@ -29,7 +34,7 @@ const SocialShareCpn: FunctionComponent<{ link: string }> = ({ link }) => {
         <div className="flex justify-center gap-1 w-full px-3 py-1">
           <BsLink className="text-3xl text-white mr-2" />
           <p className="font-bold text-white/75">
-            {copy == true ? 'Lien copié' : ''}
+            {copy == true ? 'Lien copié' : 'Copier le lien'}
           </p>
         </div>
       </a>
