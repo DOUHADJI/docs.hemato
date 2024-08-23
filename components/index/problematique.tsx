@@ -6,36 +6,25 @@ import { appTitle, AppTitleCpn, myLinkedinProfilLink } from '../const'
 
 const Problematique: FunctionComponent = () => {
   return (
-    <div className="relative">
-      <div className=" grid gap-12 absolute right-0 z-10 opacity-25 border-transparent  ">
-        <Image
-          height={320}
-          width={450}
-          src="/images/technicien.jpg"
-          alt="White blood cell img"
-          className="rounded-tl-[20px] myWbcImg"
-        />
-      </div>
-      <section className="relative">
-        <div>
-          <p className="text-xl uppercase font-bold text-xl sm:text-2xl md:text-[2rem]">
-            <span className="text-blue-400 mr-2 text-[2rem] md:text-[2.5rem]">
-              #
-            </span>
-            {appTitle} : qu&apos;est ce que s&apos;est ?
-          </p>
+    <section className="relative pt-12">
+      <div>
+        <div className="text-xl uppercase font-black text-danger sm:text-2xl md:text-[2rem]">
+          <span className="text-blue-700 mr-2 text-[2rem] md:text-[2.5rem]">
+            #
+          </span>
+          {appTitle} : qu&apos;est ce que s&apos;est  et pourquoi ?
         </div>
+      </div>
 
-        <div className="pl-12 mt-6">
-          <p className=" font-bold text-xl md:text-[1.4rem] ">
-            <span className="text-blue-300 mr-2 text-sm md:text-[1.3rem]">
+      <div className=" grid md:grid-cols-2 gap-8 pl-12 mt-12">
+        <div className='text-gray-700 text-justify'>
+          <div className="text-[1.4rem] font-bold text-black my-4">
+            <span className="text-blue-700 mr-2 text-sm md:text-[1.3rem]">
               #
             </span>
             D&apos;abord la problématique
-          </p>
-
-          <p className="text- text-lg text-justify mt-2  md:text-[1.2rem] ">
-            <span>Partant du constat que le</span>
+          </div>
+          <span>Partant du constat que le</span>
             <span>
               <a className=" font-bold"> Togo </a>
             </span>
@@ -49,7 +38,7 @@ const Problematique: FunctionComponent = () => {
             place de leur manuel qualité conformément aux recommandations de la
             norme{' '}
             <a
-              className="underline text-bold text-blue-300 z-20"
+              className="underline text-bold text-blue-700 z-20"
               target={'_blank'}
               rel="noreferrer"
               href="https://www.iso.org/fr/standard/56115.html#:~:text=L%27ISO%2015189%3A2012%20sp%C3%A9cifie,et%20%C3%A9valuent%20leur%20propre%20comp%C3%A9tence."
@@ -57,58 +46,38 @@ const Problematique: FunctionComponent = () => {
               ISO 15189 : 2012
             </a>{' '}
             , quelque chose devait être fait pour y remédier !
-            <br />
-            <br />
-            <p className="text-[1.4rem]  font-bold">
-              <span className="text-blue-300  mr-2 text-[1.5rem]">#</span>
-              Approche de solution
-            </p>
-            <AppTitleCpn /> est une solution pensée afin d&apos;apporter
-            solution à la problématique posée précedemment.
-            <br />
-            Ce site est dédié à fournir un répertoire de méthodologies sur les
-            différents processus, effectués au sein des laboratoires
-            d&apos;analyses en hématologie, tout en tenant compte des paramêtres
-            de restrictions liés aux conditions réelles au sein des structures
-            de santé, des laboratoires d&apos;analyses.
-            <br />
-            <br />
-            <p className="text-[1.4rem]  font-bold">
-              <span className="text-blue-300  mr-2 text-[1.5rem]">#</span>
-              {appTitle}, peut-on s&apos;y fier ?
-            </p>
-            Ce site est animé par des médecins et biologistes professionnels en
-            hématologie du tel que ... (Ceux qui voudront bien soutenir le
-            projet){' '}
-            <a
-              className="line-through decoration-2  text-bold text-blue-300 z-20"
-              target={'_blank'}
-              href="#"
-              /* https://telemedchucampus.tg/ */
-              rel="noreferrer"
-            >
-              CHU / Univertité
-            </a>{' '}
-            et destiné au personnel du corps médical et en particulier aux
-            professionnels ou aux étudiants en biologie médical, et aux
-            laboratoires d&apos;analyses...
-          </p>
-          <div className="grid justify-end">
-            <Link href={myLinkedinProfilLink} target="_blank">
-              <p className="-ml-8 font-bold text-blue-300">
-                {' '}
-                Amevi Gregoire DOUHADJI
-              </p>
-            </Link>
-
-            <p className=" font-light text-gray-400">- Développeur web</p>
-            <p className=" font-light text-gray-400">
-              - Licence en analyses médicales et biologiques
-            </p>
-          </div>
         </div>
-      </section>
-    </div>
+
+        <div className='text-gray-700 text-justify'>
+          <div className="text-[1.4rem] font-bold text-black my-4">
+            <span className="text-blue-700 mr-2 text-sm md:text-[1.3rem]">
+              #
+            </span>
+            Approche de solution
+          </div>
+          <AppTitleCpn /> est une solution pensée visant à fournir un répertoire
+          de méthodologies sur les différents processus, effectués au sein des
+          laboratoires d&apos;analyses en hématologie, tout en tenant compte des
+          paramêtres de restrictions liés aux conditions réelles au sein des
+          structures de santé, des laboratoires d&apos;analyses.
+        </div>
+
+        <div className='text-gray-700 text-justify'>
+          <div className="text-[1.4rem] font-bold text-black my-4">
+            <span className="text-blue-700 mr-2 text-sm md:text-[1.3rem]">
+              #
+            </span>
+            {appTitle}, peut-on s&apos;y fier ?
+          </div>
+          <AppTitleCpn /> est une ressource fiable, conçue pour offrir des
+          informations claires et validées sur les processus en hématologie.
+          Chaque méthodologie est basée sur des normes reconnues, régulièrement
+          mise à jour, et adaptée aux réalités des laboratoires. Vous pouvez
+          compter sur {appTitle} pour être une référence pratique et
+          sécurisée pour les professionnels de la santé et les étudiants.
+        </div>
+      </div>
+    </section>
   )
 }
 

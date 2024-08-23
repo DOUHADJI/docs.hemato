@@ -7,22 +7,32 @@ export const myGithubProfilLink = 'https://github.com/DOUHADJI'
 export const NavLinks = [
   {
     title: 'Procédures',
-    href: '/processes/prologue',
+    href: '/procedures/prologue',
+    isBlank : true
   },
 
   {
     title: 'Cours',
-    href: '/courses/prologue',
+    href: '/cours/prologue',
+    isBlank : true
   },
 
   {
     title: 'Atlas cytologique',
     href: '/atlas',
+    isBlank : true
   },
 
   {
     title: 'Cas de la semaine',
-    href: '/cas_de_la_semaine',
+    href: '/cas-de-la-semaine',
+    isBlank : false
+  },
+
+  {
+    title: 'Articles',
+    href: '/articles',
+    isBlank : false
   },
 ]
 
@@ -35,7 +45,7 @@ export function AppTitleCpn() {
   return (
     <span>
       <span>
-        <a className="underline font-bold text-blue-300">{appTitle}</a>
+        <a className="font-bold text-danger">{appTitle}</a>
       </span>{' '}
     </span>
   )
@@ -52,7 +62,7 @@ export let amevi = new contributor()
 amevi = {
   name: 'Amevi Gregoire DOUHADJI',
   grade: 'Développeur web',
-  profil: '/images/contributors/Amevi.jpg',
+  profil: '/images/contributors/Amevi.png',
   assertion:
     "Il m'est paru logique à travers Docs.Hemato une occasion pour moi d'apporter ma part de contribution à la lourde tâche qui nous incombe au sein du corps médical, puisque que moi-même je suis issu d'une formation médicale... ",
 }
@@ -63,7 +73,7 @@ michel = {
   grade: 'Développeur web',
   profil: '/images/contributors/Michel.jpg',
   assertion:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam minus recusandae sapiente error neque laboriosam aliquam enim, soluta praesentium vitae quibusdam reiciendis id ab itaque commodi explicabo nisi. A, sed',
+    "Nous nous sommes engagés à apporter des solutions concrètes aux défis du secteur médical. Nous avons  compris l'importance d'une documentation claire et accessible pour les professionnels de santé, un répertoire de méthodologies précises et fiables.",
 }
 
 export const contributors: contributor[] = [amevi]

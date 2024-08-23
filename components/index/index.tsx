@@ -11,6 +11,7 @@ import NavbarCpn from '../navbar/navbar'
 import Contributors from './contributors/contributors'
 import Partners from './partners/partners'
 import Problematique from './problematique'
+import Brand from './brand'
 
 const IndexCpn: FunctionComponent<{}> = ({}) => {
   const [hidden, setHidden] = useState(false)
@@ -20,10 +21,11 @@ const IndexCpn: FunctionComponent<{}> = ({}) => {
   }
   return (
     <div>
-      <div className="bg-gradient-to-tr from-red-400 to-slate-900 dark:from-slate-800 dark:to-slate-900">
+      <div className="bg-gradient-to-tr from-white to-gray-200">
         <div>
           <NavbarCpn />
         </div>
+        <Brand />
         <div className="">
           <div className="relative flex">
             <div className=" w-full p-12">

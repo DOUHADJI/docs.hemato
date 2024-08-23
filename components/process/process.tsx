@@ -1,4 +1,4 @@
-import { Image, Modal } from '@nextui-org/react'
+import { Image, Modal, ModalBody } from '@nextui-org/react'
 import { useRouter } from 'next/router'
 
 import { FC, useState } from 'react'
@@ -7,13 +7,9 @@ import RichtextRenderer from '../richTextRenderer'
 import SocialShareCpn from '../social_share/socialShare'
 import VideoPlayer from '../videoPlayer'
 
-const ProcessCpn: FC<{ story }> = ({ story }) => {
+const ProcessCpn: FC<{ record }> = ({ record }) => {
   const router = useRouter()
   const link = process.env.NEXT_PUBLIC_APP_BASE_PATH + router.asPath
-
-  const {
-    content: { title, description, content, image, video },
-  } = story
 
   const [open, setOpen] = useState(false)
 
@@ -21,42 +17,33 @@ const ProcessCpn: FC<{ story }> = ({ story }) => {
     setOpen(true)
   }
   return (
-    <div className="pt-6">
-      <SocialShareCpn link={link} />
-      <div>
+    <div className="pt-6 text-black relative">
+      
+      <div className='flex flex-wrap items-center gap-6'>
         <p className="text-[2rem] uppercase font-bold">
-          <span className="text-blue-400 mr-2 text-[2.5rem]">#</span>
-          {title}
+          <span className="text-danger mr-2 text-[2.5rem]">#</span>
+          {record?.title}
         </p>
+        <SocialShareCpn link={link} title={record?.title} />
       </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-3">
-          <section className="col-span-2">
-            <p className="text-[1rem] uppercase font-bold">
-              <span className="text-blue-300  mr-2 text-[1.5rem]">#</span>
-              description
-            </p>
-            <p className="text-justify  text-white/75 text-lg font-light ">
-              {description}
-            </p>
-          </section>
           <section className="flex items-center">
             <Image
               alt="process image"
-              src={image}
+              src={record?.image_path}
               width={220}
               onClick={handleImage}
               className=""
             />
             <Modal
-              noPadding
-              open={open}
+              isOpen={open}
               onClose={() => setOpen(false)}
               className="bg-transparent rounded-[0px] "
             >
-              <Modal.Body>
-                <Image alt="process image" src={image} width={720} />
-              </Modal.Body>
+              <ModalBody>
+                <Image alt="process image" src={record?.image_path} width={720} />
+              </ModalBody>
             </Modal>
           </section>
         </div>
@@ -64,16 +51,16 @@ const ProcessCpn: FC<{ story }> = ({ story }) => {
       <div>
         <section>
           <p className="text-[1rem] uppercase font-bold">
-            <span className="text-blue-300  mr-2 text-[1.5rem]">#</span>
+            <span className="text-danger  mr-2 text-[1.5rem]">#</span>
             content
           </p>
-          <p className="text-justify  text-white/75 text-lg font-light ">
-            <RichtextRenderer document={content} />
+          <p className="text-justify  text-black text-lg font-light ">
+            <RichtextRenderer document={record?.content} />
           </p>
         </section>
       </div>
 
-      <VideoPlayer link={video} />
+      <VideoPlayer link={record?.video_path} />
     </div>
   )
 }

@@ -1,34 +1,37 @@
-import { Dropdown, Image } from '@nextui-org/react'
-import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import { useState, useMemo } from 'react'
-import { appTitle, NavLinks } from '../const'
-import AppInfos from './appInfos'
-import FooterThemeSwitcher from './footerThemeSwitcher'
 import NavLinksCpn from './navLinks'
 import SocialLinks from './socialLinks'
+import { appTitle } from '../const'
 
 const Footer = () => {
   return (
-    <div className="pt-12 dark:bg-gray-800">
-      <div className="flex justify-around gap-12  px-6 border-t border-b  py-12 sm:flex flex-wrap">
-        <NavLinksCpn />
-
-        <div className="grid justify-center gap-4">
-          <Link className="text-gray-700  dark:text-white" href={'#'}>
-            politique de confidentialité
+    <div className=" bg-danger">
+      <div className="flex justify-around gap-12  px-6 border-t border-gray-300  py-6 sm:flex flex-wrap">
+        <div className="flex flex-col gap-4 justify-center text-xs">
+          <Link className=" text-white" href={'#'}>
+            Politique de confidentialité
           </Link>
-          <Link className="text-gray-700 dark:text-white" href={'#'}>
-            condition d&apos;utilisation
+          <Link className=" text-white" href={'#'}>
+            Condition d&apos;utilisation
           </Link>
         </div>
 
         <div className="grid  justify-center  items-around gap-12">
           <SocialLinks />
-          <FooterThemeSwitcher />
         </div>
       </div>
-      <AppInfos />
+      <div className="flex justify-center py-2 text-xs">
+        Powered by{' '}
+        <a
+          className="px-1 underline"
+          href="https://glabgroup-vercel.app"
+          target="blank"
+        >
+          {' '}
+          Glab Group
+        </a>{' '}
+        | @copyright {new Date().getFullYear()}
+      </div>
     </div>
   )
 }

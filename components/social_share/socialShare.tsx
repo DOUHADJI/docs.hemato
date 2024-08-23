@@ -2,21 +2,24 @@ import { Button, Link } from '@nextui-org/react'
 import { FunctionComponent, useState } from 'react'
 import { BsLink, BsShare } from 'react-icons/bs'
 import SocialShareModalCpn from './socialShareModal'
+import { toast } from "react-toastify"
 
-const SocialShareCpn: FunctionComponent<{ link: string }> = ({ link }) => {
+const SocialShareCpn: FunctionComponent<{ link: string; title: string }> = ({
+  link,
+  title,
+}) => {
   const [open, setOpen] = useState(false)
   const [copy, setCopy] = useState(false)
 
-  const handleOpenModal = (e) => {
-    e.preventDefault()
+  const handleOpenModal = () => {
     setOpen(true)
   }
 
-  const handleClipboardCopy = async (e) => {
-    e.preventDefault()
+  const handleClipboardCopy = async () => {
     navigator.clipboard.writeText(link)
     setCopy(true)
     resetCopy()
+    toast.info("Lien copié");
   }
 
   const resetCopy = () =>
@@ -25,52 +28,25 @@ const SocialShareCpn: FunctionComponent<{ link: string }> = ({ link }) => {
     }, 2000)
 
   return (
-    <div className="flex justify-start gap-4 mt-6">
-      <a
-        className="border-2 rounded-full"
-        onClick={handleClipboardCopy}
-        href=""
-      >
-        <div className="flex justify-center gap-1 w-full px-3 py-1">
-          <BsLink className="text-3xl text-white mr-2" />
-          <p className="font-bold text-white/75">
-            {copy == true ? 'Lien copié' : 'Copier le lien'}
-          </p>
+    <div className="flex flex-col fixed -right-6 justify-start items-center gap-4">
+      <Button className="" onPress={handleClipboardCopy} color="primary">
+        <div className="flex items-center gap-1 w-full py-1">
+          <BsLink className="text-white" size={20} />
         </div>
-      </a>
+      </Button>
 
-      <a className="border-2 rounded-full" onClick={handleOpenModal} href="">
-        <div className="flex justify-center items-center gap-1 w-full px-3 py-1">
-          <BsShare className="text-2xl text-white mr-2" />
-          <p className="font-bold text-white/75">Partager</p>
+      <Button className="z-20" onPress={handleOpenModal} color="success">
+        <div className="flex items-center gap-1 w-full py-1">
+          <BsShare className="text-white" size={18} />
         </div>
-      </a>
+      </Button>
 
-      {/* <Button
-        bordered
-        auto
-        className="border-white rounded-full"
-        onPress={handleClipboardCopy}
-        type={null}
-      >
-        <BsLink className="text-2xl text-white mr-2" />
-        <p className="font-bold text-white/75">
-          {copy == true ? 'Lien copié' : ''}
-        </p>
-      </Button> */}
-
-      {/* <Button
-        bordered
-        auto
-        className="border-white rounded-full"
-        onPress={handleOpenModal}
-        type={null} 
-      >
-        <BsShare className="text-xl text-white mr-2" />
-       
-      </Button> */}
-
-      <SocialShareModalCpn link={link} open={open} setOpen={setOpen} />
+      <SocialShareModalCpn
+        link={link}
+        title={title}
+        open={open}
+        setOpen={setOpen}
+      />
     </div>
   )
 }

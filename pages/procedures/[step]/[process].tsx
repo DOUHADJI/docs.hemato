@@ -3,37 +3,45 @@ import { FunctionComponent } from 'react'
 import ProcessCpn from '../../../components/process/process'
 import ProcessesSideBar from '../../../components/sidebar/processes/ProcessesSidebar'
 import { fetchAllStories, fetchOneProcess } from '../../../components/api'
+import { GET_PROCESS } from '../../../shared/apiRoutes'
+import axios from 'axios'
 
-const Process: FunctionComponent<{ story }> = ({ story }) => {
+const Process: FunctionComponent<{ process }> = ({ process }) => {
   return (
     <LayoutCpn navigation={<ProcessesSideBar />}>
-      <ProcessCpn story={story} />
+      <ProcessCpn record={process} />
     </LayoutCpn>
   )
 }
 export default Process
 
 export async function getStaticProps({ params }) {
-  // the slug of the story
+  
   const { step, process } = params
+  const res = await axios.get(GET_PROCESS(process))
 
-  const slug = step + '/' + process
-
-  const data = await fetchOneProcess(slug)
+  if (res?.status === 200) {
+    return {
+      props: {
+        process : res?.data.process,
+        key: res?.data?.process?.id,
+      },
+    }
+  }
 
   return {
     props: {
-      story: data.story ? data.story : false,
-      key: data.story ? data.story.id : false,
+      process : false,
+      key: false,
     },
   }
 }
 
 export async function getStaticPaths() {
-  const data = await fetchAllStories()
+ /*  const data = await fetchAllStories()
   const slugs = data.stories.map((process) => '/' + process.full_slug)
 
-  console.log(slugs)
+  console.log(slugs) */
 
   return {
     paths: [],

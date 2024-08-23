@@ -1,6 +1,5 @@
-import React from 'react'
+import React from "react"
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { CssBaseline } from '@nextui-org/react'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -14,8 +13,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>{CssBaseline.flush()}</Head>
-        <body>
+        <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+        </Head>
+        <body className="font-nunito">
           <Main />
           <NextScript />
         </body>
