@@ -35,6 +35,7 @@ const SideBarLinkCpn: FunctionComponent<{
         <ul className='mb-8'>
           {subLinks?.map((subLink, index) => (
             <SideBarSubLink
+            key={index}
               title={subLink?.title}
               href={ "/procedures/procedures-" + slug + "/" + subLink?.slug}
               icon={BsDot}

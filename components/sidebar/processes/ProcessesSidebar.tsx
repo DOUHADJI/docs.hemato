@@ -25,6 +25,7 @@ const ProcessesSideBar: FunctionComponent = () => {
       />
       {steps?.map((step, index) => (
         <SideBarLinkCpn
+          key={index}
           title={'Procédures ' + step?.name}
           slug={step?.slug}
           href={'procudures-' + step?.slug}
