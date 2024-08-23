@@ -10,7 +10,7 @@ const SearchSingleResult: FunctionComponent<{
   return (
     <Link href={'/' + story_link}>
       <div className="flex gap-4">
-        <Avatar squared size={'xl'} src={image} />
+        <Avatar  size={'lg'} src={image} />
         <div className="grid gap- justify-center pr-4">
           <p className="font-bold text-gray-700">{title}</p>
           <p className="font-bold text-blue-900/75 text-xs">{story_link}</p>

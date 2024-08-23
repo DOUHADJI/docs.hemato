@@ -1,4 +1,3 @@
-import { Collapse, Text } from '@nextui-org/react'
 import { FunctionComponent, ReactNode } from 'react'
 import MyDropdown from './dropdown'
 import SideBarLinkCpn from './sidebarLink'

@@ -1,8 +1,8 @@
 import SideBarLinkCpn from './sidebarLink'
 import { FunctionComponent } from 'react'
-import { BsCaretUp } from 'react-icons/bs'
+import { BsCaretUp, BsDot } from 'react-icons/bs'
 
-const MyDropdown: FunctionComponent<{
+const MyDropdown : FunctionComponent<{
   id: string
   title: string
   links: { title: string; href: string }[]
@@ -38,6 +38,7 @@ const MyDropdown: FunctionComponent<{
               key={item.title}
               title={item.title}
               href={item.href}
+              icon={BsDot}
             />
           ))}
         </div>
