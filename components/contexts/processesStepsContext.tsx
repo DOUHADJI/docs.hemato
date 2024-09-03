@@ -8,7 +8,7 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-import { GET_STEPS } from '../../shared/apiRoutes'
+import { GET_STEPS } from '../../shared/apiEndpoints'
 
 export const processesStepsContext = createContext(null)
 
@@ -23,7 +23,6 @@ export const ProcessesStepsContextProvider: FunctionComponent<{
   const getSteps = async () => {
     const res = await axios.get(GET_STEPS)
     if (res?.status === 200) {
-      console.log(res?.data)
       setSteps(res?.data?.steps)
     }
   }

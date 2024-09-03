@@ -1,20 +1,21 @@
+import { Document } from '@contentful/rich-text-types';
 import { FunctionComponent } from 'react'
-import {
-  render,
-  StoryblokRichtext,
-  RenderOptions,
-} from 'storyblok-rich-text-react-renderer'
 
-export interface RichtextProps {
-  document: StoryblokRichtext
-  options?: RenderOptions
-}
 
-const RichtextRenderer: FunctionComponent<RichtextProps> = ({
+
+
+const RichtextRenderer: FunctionComponent<{document : Document}> = ({
   document,
-  options,
 }) => {
-  return <section>{render(document, options)}</section>
+
+/*   if(document)
+  {
+    return <div>{documentToReactComponents(document)}</div>;
+  } */
+
+    return  <div 
+    dangerouslySetInnerHTML={{ __html: document }} 
+  />
 }
 
 export default RichtextRenderer

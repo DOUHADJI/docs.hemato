@@ -26,6 +26,9 @@ const ProcessCpn: FC<{ record }> = ({ record }) => {
         </p>
         <SocialShareCpn link={link} title={record?.title} />
       </div>
+      <div className="flex">
+        <VideoPlayer link={record?.video_path} />
+      </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-3">
           <section className="flex items-center">
@@ -50,17 +53,16 @@ const ProcessCpn: FC<{ record }> = ({ record }) => {
       </div>
       <div>
         <section>
-          <p className="text-[1rem] uppercase font-bold">
+          <p className="text-[1rem] uppercase font-bold mb-6">
             <span className="text-danger  mr-2 text-[1.5rem]">#</span>
-            content
+            Procédure de la : {record?.title}
           </p>
-          <p className="text-justify  text-black text-lg font-light ">
+          <div className="text-justify  text-black text-lg font-light">
             <RichtextRenderer document={record?.content} />
-          </p>
+          </div>
         </section>
       </div>
 
-      <VideoPlayer link={record?.video_path} />
     </div>
   )
 }

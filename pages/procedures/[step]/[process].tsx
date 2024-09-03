@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import ProcessCpn from '../../../components/process/process'
 import ProcessesSideBar from '../../../components/sidebar/processes/ProcessesSidebar'
 import { fetchAllStories, fetchOneProcess } from '../../../components/api'
-import { GET_PROCESS } from '../../../shared/apiRoutes'
+import { GET_PROCESS } from '../../../shared/apiEndpoints'
 import axios from 'axios'
 
 const Process: FunctionComponent<{ process }> = ({ process }) => {

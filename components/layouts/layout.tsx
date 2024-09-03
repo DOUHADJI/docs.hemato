@@ -35,7 +35,7 @@ const LayoutCpn: FunctionComponent<{
       </div>
       <div className="flex top-[70px] fixed right-0 left-0 bottom-0">
         <SideBar>{navigation}</SideBar>
-        <div className="flex flex-col relative justify-center h-full overflow-y-hidden bg-[#f0eeee]  md:w-4/5">
+        <div className="flex flex-col relative justify-center h-full overflow-y-hidden bg-[#f0eeee]  md:w-[75vw]">
           <div className="h-full overflow-y-auto z-30">
             <div className="grid py-8 mb-16 px-12 w-full h-fit">{children}</div>
           </div>

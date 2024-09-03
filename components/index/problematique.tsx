@@ -8,7 +8,7 @@ const Problematique: FunctionComponent = () => {
   return (
     <section className="relative pt-12">
       <div>
-        <div className="text-xl uppercase font-black text-danger sm:text-2xl md:text-[2rem]">
+        <div className="text-lg uppercase font-black text-danger sm:text-2xl md:text-[2rem]">
           <span className="text-blue-700 mr-2 text-[2rem] md:text-[2.5rem]">
             #
           </span>
@@ -18,7 +18,7 @@ const Problematique: FunctionComponent = () => {
 
       <div className=" grid md:grid-cols-2 gap-8 pl-12 mt-12">
         <div className='text-gray-700 text-justify'>
-          <div className="text-[1.4rem] font-bold text-black my-4">
+          <div className="text-lg md:text-[1.4rem] font-bold text-black my-4">
             <span className="text-blue-700 mr-2 text-sm md:text-[1.3rem]">
               #
             </span>
@@ -49,7 +49,7 @@ const Problematique: FunctionComponent = () => {
         </div>
 
         <div className='text-gray-700 text-justify'>
-          <div className="text-[1.4rem] font-bold text-black my-4">
+          <div className="text-lg md:text-[1.4rem] font-bold text-black my-4">
             <span className="text-blue-700 mr-2 text-sm md:text-[1.3rem]">
               #
             </span>
@@ -63,7 +63,7 @@ const Problematique: FunctionComponent = () => {
         </div>
 
         <div className='text-gray-700 text-justify'>
-          <div className="text-[1.4rem] font-bold text-black my-4">
+          <div className="text-lg md:text-[1.4rem] font-bold text-black my-4">
             <span className="text-blue-700 mr-2 text-sm md:text-[1.3rem]">
               #
             </span>

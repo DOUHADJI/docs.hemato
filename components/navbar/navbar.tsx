@@ -40,7 +40,10 @@ const NavbarCpn: FunctionComponent = () => {
             className="sm:hidden text-danger"
           />
           <NavbarBrand>
-            <div className="flex font-black text-2xl text-danger">
+            <div
+              className="flex font-black text-2xl cursor-pointer text-danger"
+              onMouseDown={goHome}
+            >
               {appTitle}
             </div>
           </NavbarBrand>
@@ -51,14 +54,22 @@ const NavbarCpn: FunctionComponent = () => {
           >
             {NavLinks.map((item, index) => (
               <NavbarItem key={index}>
-                <NavLink href={item.href} title={item?.title} isBlank={item?.isBlank} />
+                <NavLink
+                  href={item.href}
+                  title={item?.title}
+                  isBlank={item?.isBlank}
+                />
               </NavbarItem>
             ))}
           </NavbarContent>
           <NavbarMenu className="">
             {NavLinks.map((item, index) => (
               <NavbarMenuItem key={index}>
-                <NavLink href={item.href} title={item?.title} isBlank={item?.isBlank} />
+                <NavLink
+                  href={item.href}
+                  title={item?.title}
+                  isBlank={item?.isBlank}
+                />
               </NavbarMenuItem>
             ))}
           </NavbarMenu>

@@ -31,9 +31,9 @@ function Partners() {
   return (
     <>
       <div className="bg-gray-100 py-12">
-        <div className="grid md:grid-cols-3 w-full  py-12">
+        <div className="grid md:grid-cols-3 w-full py-12">
           <div className="mb-10 px-12">
-            <p className="text-3xl font-black leading-[15px] text-start text-danger lg:text-4xl mt-24">
+            <p className="text-3xl font-black leading-[30px] text-start text-danger lg:text-4xl md:mt-24 mt-12">
               Devenez partenaire <br />
               pour soutenir le projet
             </p>
