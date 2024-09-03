@@ -50,7 +50,7 @@ const CasDeLaSemaine: FunctionComponent<{
 }
 export default CasDeLaSemaine
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const res = await axios.get(GET_WEEK_CASES)
   // console.log('result', res?.data)
   if (res?.status == 200) {
